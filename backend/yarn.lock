@@ -1781,10 +1781,10 @@ etag@~1.8.1:
   resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
-exit-hook@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npmjs.org/exit-hook/-/exit-hook-5.1.0.tgz"
-  integrity sha512-INjr2xyxHo7bhAqf5ong++GZPPnpcuBcaXUKt03yf7Fie9yWD7FapL4teOU0+awQazGs5ucBh7xWs/AD+6nhog==
+exit-hook@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.npmjs.org/exit-hook/-/exit-hook-2.2.1.tgz"
+  integrity sha512-eNTPlAD67BmP31LDINZ3U7HSF8l57TxOY2PmBJ1shpCvpnxBF93mWCE8YHBnXs8qiUZJc9WDcWIeC3a2HIAMfw==
 
 express@^4.18.2:
   version "4.22.2"

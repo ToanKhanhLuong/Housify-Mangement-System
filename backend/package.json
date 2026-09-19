@@ -2,7 +2,7 @@
   "name": "nodejs-expressjs-mongodb-base-project",
   "private": true,
   "version": "1.0.0",
-  "author": "TrungQuanDev - Một Lập Trình Viên",
+  "author": "toanlk",
   "description": "https://youtube.com/@trungquandev",
   "engines": {
     "node": ">=18.x"
@@ -18,7 +18,7 @@
   "dependencies": {
     "@babel/runtime": "^7.22.10",
     "dotenv": "^17.4.2",
-    "exit-hook": "^5.1.0",
+    "exit-hook": "^2.2.1",
     "express": "^4.18.2",
     "mongodb": "^7.3.0",
     "mongoose": "^9.7.2"
