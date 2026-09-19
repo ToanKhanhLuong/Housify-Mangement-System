@@ -1,0 +1,1 @@
+Housify Management System là hệ thống hỗ trợ quản lý nhà trọ, giúp chủ trọ dễ dàng theo dõi phòng, người thuê, hợp đồng, hóa đơn và các khoản thanh toán. Hệ thống được xây dựng nhằm đơn giản hóa quá trình quản lý, giảm thao tác thủ công và giúp thông tin được lưu trữ, tra cứu một cách thuận tiện và chính xác hơn.
