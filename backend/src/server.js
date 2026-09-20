@@ -1,35 +1,44 @@
 import express from "express";
-import exitHook from "exit-hook";
-import { CONNECT_DB, CLOSE_DB } from "./config/mongodb";
-import { env } from "./config/environment";
+import { asyncExitHook } from "exit-hook";
+
+import { CONNECT_DB, CLOSE_DB } from "./config/mongodb.js";
+import { env } from "./config/environment.js";
 
 const START_SERVER = () => {
   const app = express();
 
-  app.get("/", async (req, res) => {
-    res.end("<h1>Hello World!</h1><hr>");
+  app.use(express.json());
+
+  app.get("/", (req, res) => {
+    res.json({
+      message: "Server is running!",
+    });
   });
 
   app.listen(env.APP_PORT, env.APP_HOST, () => {
     console.log(
-      `Hello ${env.AUTHOR}, server running at ${env.APP_HOST}:${env.APP_PORT}/`,
+      `Hello ${env.AUTHOR}, server running at http://${env.APP_HOST}:${env.APP_PORT}`,
     );
-  });
-
-  exitHook(() => {
-    console.log(`4. Server is Shouldown..`);
-    CLOSE_DB();
   });
 };
 
-(async () => {
-  try {
-    console.log("1.Connected to MongoDB Cloud Atlas!");
-    await CONNECT_DB();
-    console.log("2.Connected to MongoDB Cloud Atlas!");
+CONNECT_DB()
+  .then(() => {
+    console.log("Connected to MongoDB");
     START_SERVER();
-  } catch (error) {
-    console.error(error);
-    process.exit(0);
-  }
-})();
+  })
+  .catch((error) => {
+    console.error("Cannot connect to MongoDB:", error);
+    process.exit(1);
+  });
+
+asyncExitHook(
+  async () => {
+    console.log("Server is shutting down...");
+    await CLOSE_DB();
+    console.log("MongoDB connection closed.");
+  },
+  {
+    wait: 500,
+  },
+);

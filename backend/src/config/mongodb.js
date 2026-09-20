@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { env } = require('./environment');
+import mongoose from 'mongoose'
+import { env } from './environment.js'
 
 const CONNECT_DB = async () => {
     try {
@@ -17,4 +17,4 @@ const CLOSE_DB = async () => {
     await mongoose.disconnect();
 };
 
-module.exports = { CONNECT_DB, CLOSE_DB };
+export { CONNECT_DB, CLOSE_DB }
